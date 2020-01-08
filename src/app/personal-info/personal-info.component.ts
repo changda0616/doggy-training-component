@@ -7,12 +7,24 @@ import { Account } from './../interface/account';
   styleUrls: ['./personal-info.component.scss']
 })
 export class PersonalInfoComponent implements OnInit {
-  @Input() data: Account;
+
+  get data(): Account {
+    return this.originalData;
+  }
+
+  @Input('data')
+  set data(value: Account) {
+    this.originalData = Object.assign({}, value);
+  }
+
   @Output() nextStep = new EventEmitter();
+
+  originalData: Account;
 
   constructor() { }
 
   ngOnInit() {
   }
+
 
 }
