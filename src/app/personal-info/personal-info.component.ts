@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Account } from './../interface/account';
 
 @Component({
@@ -8,6 +8,8 @@ import { Account } from './../interface/account';
 })
 export class PersonalInfoComponent implements OnInit {
   @Input() data: Account;
+  @Output() nextStep = new EventEmitter();
+
   constructor() { }
 
   ngOnInit() {

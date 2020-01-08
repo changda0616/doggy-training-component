@@ -1,0 +1,10 @@
+.wrapper {
+  position: relative;
+}
+.action {
+  display: flex;
+  justify-content: flex-end;
+  button {
+    margin-right: 10px;
+  }
+}
