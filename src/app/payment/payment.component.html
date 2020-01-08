@@ -1,0 +1,9 @@
+Step2:
+<div class="wrapper">
+  <label for="payment">Payment:</label><input type="text" name="payment" id="payment" [(ngModel)]="originalData.payment"/>
+</div>
+<div class="action">
+  <button (click)="cancel.emit()">Cancel</button>
+  <button (click)="confirm.emit(originalData)">Confirm</button>
+</div>
+

@@ -1,3 +1,4 @@
+import { Account } from './interface/account';
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,5 +7,24 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'doggy-training-component';
+  step = 0;
+  originalData = {
+    name: 'annoymouns',
+    payment: null
+  };
+  account: Account = this.originalData;
+
+  resetData() {
+    this.step = 0;
+    this.account = Object.assign({}, this.originalData);
+  }
+  updatedata(newData: Account) {
+    this.step = 1;
+    this.account = Object.assign({}, newData);
+  }
+  submitData(newData: Account) {
+    this.step = 0;
+    this.account = Object.assign(this.originalData, newData);
+  }
+
 }
