@@ -17,7 +17,8 @@ export class PersonalInfoComponent implements OnInit {
     this.originalData = Object.assign({}, value);
   }
 
-  @Output() nextStep = new EventEmitter();
+  @Output() update = new EventEmitter<Account>();
+
 
   originalData: Account;
 
@@ -25,6 +26,5 @@ export class PersonalInfoComponent implements OnInit {
 
   ngOnInit() {
   }
-
 
 }

@@ -1,16 +1,17 @@
 <div class="result">
-  {{ account | json }}
+  current: {{ account | json }}<br />
+  original: {{ originalData | json }}
 </div>
 <div class="wrapper">
   <app-personal-info
-    *ngIf="step === 0"
+    [hidden]="step !== 0"
     [data]="account"
-    (nextStep)="step = 1"
+    (update)="updatedata($event)"
   ></app-personal-info>
   <app-payment
-    *ngIf="step === 1"
+    [hidden]="step !== 1"
     [data]="account"
     (cancel)="resetData()"
-    (confirm)="updateData()"
+    (confirm)="submitData($event)"
   ></app-payment>
 </div>

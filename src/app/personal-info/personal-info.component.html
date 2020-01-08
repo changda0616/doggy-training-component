@@ -1,8 +1,9 @@
-<div class="wrapper">
+Step1:
+<div class="wrapper">  
   <label for="name">Name: </label
   ><input type="text" name="name" id="name" [(ngModel)]="data.name" />
 </div>
 
 <div class="action">
-  <button class="nextBtn" (click)="nextStep.emit()">Next</button>
+  <button class="nextBtn" (click)="update.emit(data)">Next</button>
 </div>

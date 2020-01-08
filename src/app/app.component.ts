@@ -8,20 +8,23 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   step = 0;
-  title = 'doggy-training-component';
-  oriData = {
+  originalData = {
     name: 'annoymouns',
     payment: null
   };
-  account: Account = this.oriData;
+  account: Account = this.originalData;
 
   resetData() {
     this.step = 0;
-    this.account = this.oriData;
+    this.account = Object.assign({}, this.originalData);
   }
-
-  updateData() {
-
+  updatedata(newData: Account) {
+    this.step = 1;
+    this.account = Object.assign({}, newData);
+  }
+  submitData(newData: Account) {
+    this.step = 0;
+    this.account = Object.assign(this.originalData, newData);
   }
 
 }
